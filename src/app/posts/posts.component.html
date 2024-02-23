@@ -1,0 +1,14 @@
+<h1>Todas as publicações</h1>
+
+@if (!isLoading) {
+    <ul>
+        @for (post of this.posts; track $index) {
+            <li>
+                <a routerLink="/post/{{ post.slug }}">{{ post.title.rendered }}</a>
+            </li>
+        }
+    </ul>
+
+} @else {
+    <p>A carregar...</p>
+}

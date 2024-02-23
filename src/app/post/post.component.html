@@ -1,0 +1,14 @@
+<a routerLink="/posts" class="display: block; text-align: center; width: 100%;">Publicações</a>
+@if (!isLoading) {
+    @if (hasData) {
+        <h1>
+            {{ (post.title && post.title.rendered) ? post.title.rendered : 'Erro ao pegar o título' }}
+        </h1>
+        <div class="img" style="max-height: 500px; position: relative; overflow: hidden;">
+            <img src="{{ post.images_size_custom.fullImageSize }}" style="width: 100%; height: 100%; object-fit: cover; object-position: center; box-sizing: border-box;" alt="">
+        </div>
+        <div class="content" [innerHTML]="(post.content && post.content.rendered) ? post.content.rendered : 'Erro ao pegar o conteúdo'"></div>
+    }
+} @else {
+    <p>A carregar...</p>
+}
