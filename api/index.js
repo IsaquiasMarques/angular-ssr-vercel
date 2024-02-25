@@ -1,3 +1,3 @@
-const server = import('../dist/angular-vercel/server/server.mjs');
-console.log("Ele entra mesmo aqui!")
+const server = import('../dist/angular-vercel/server/main.server.mjs');
+
 module.exports = server.app;
